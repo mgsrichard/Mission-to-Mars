@@ -33,12 +33,12 @@ We use the following dependencies:
   - Datetime - to capture the time the data was scraped
 
 ### Functions 
-The following functions are created:
-  -mars_news() - scrapes the mars news website
-  -featured_image() - scrapes the most recent featured image of mars
-  -mars_facts() - scrapes the table of facts about Mars
-  -mars_hemispheres() - scrapes 4 high resolution images of Mars' hemispheres
-  -scrape_all() - runs all 4 scraping functions and gathers all scraped data into a dictionary which is returned
+The following functions are created: 
+  - mars_news() - scrapes the mars news website
+  - featured_image() - scrapes the most recent featured image of mars
+  - mars_facts() - scrapes the table of facts about Mars
+  - mars_hemispheres() - scrapes 4 high resolution images of Mars' hemispheres
+  - scrape_all() - runs all 4 scraping functions and gathers all scraped data into a dictionary which is returned
   
 ## HTML index.html
 This file creates the structure for the end user interface. The initial page is not populated with data, a button is created that triggers the scraping code, and then the page refreshes to display the scraped data. The html and css/bootstrap in the code determine the layout, colors, fonts, and functionality of the page. Double curly brackets {{}} surround data that is being pulled from the mongo database into the web page we are building. A for loop converts the Mars facts into a nice table.
