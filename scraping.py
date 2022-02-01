@@ -1,5 +1,5 @@
 
-#Import Splinter and Beautiful Soup
+#Import dependencies
 from splinter import Browser
 from bs4 import BeautifulSoup as soup
 from webdriver_manager.chrome import ChromeDriverManager
@@ -9,8 +9,9 @@ import datetime as dt
 
 def scrape_all():
     #Initiate headless driver for deployment/Set up Splinter
+    #change headless to False if you want to watch the program move between websites
     executable_path = {'executable_path': ChromeDriverManager().install()}
-    browser = Browser('chrome', **executable_path, headless = False)
+    browser = Browser('chrome', **executable_path, headless = True)
 
     news_title, news_paragraph = mars_news(browser)
 
@@ -109,24 +110,21 @@ def mars_facts():
     #Convert table back to html, add bootstrap
     return df.to_html()
 
+#Scrape hemisphere images
 def mars_hemispheres(browser):
+
     # 1. Use browser to visit the URL 
     url = 'https://marshemispheres.com/'
-
     browser.visit(url)
+
     # 2. Create a list to hold the images and titles.
     hemisphere_image_urls = []
 
     # 3. Write code to retrieve the image urls and titles for each hemisphere.
 
-
-
     #parse main page 
     html = browser.html
     mainpg_soup = soup(html,'html.parser')
-    #print(mainpg_soup.prettify())
-
-
 
     #find tags for links to four sub pages with images
     div_items = mainpg_soup.find_all('div',class_='item')
