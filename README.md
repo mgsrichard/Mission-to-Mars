@@ -28,6 +28,7 @@ In the file scraping.py we visit the following websites to scrape the following 
 ### Dependencies
 We use the following dependencies:
   - Splinter - to navigate to websites, click buttons, grab the html code
+  - ChromeDriverManager - for splinter to use to operate Chrome
   - Beautful soup - to parse through the html code, by creating a soup item, and zeroing in on the elements we want
   - Pandas - to convert the Mars facts table into a dataframe for easier handling of that data
   - Datetime - to capture the time the data was scraped
